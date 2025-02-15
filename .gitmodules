@@ -1,0 +1,12 @@
+[submodule "kdsx-pos-v2"]
+	path = kdsx-pos-v2
+	url = git@github.com:yeahuz/kdsx-pos-v2.git
+[submodule "kdsx-dash-v2"]
+	path = kdsx-dash-v2
+	url = git@github.com:yeahuz/kdsx-dash-v2.git
+[submodule "kdsx-kitchen-v2"]
+	path = kdsx-kitchen-v2
+	url = git@github.com:yeahuz/kdsx-kitchen-v2.git
+[submodule "kdsx-api"]
+	path = kdsx-api
+	url = git@github.com:yeahuz/kdsx-api.git
