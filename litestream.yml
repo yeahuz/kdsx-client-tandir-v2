@@ -1,0 +1,10 @@
+dbs:
+  - path: /sqlite/db.sqlite
+    replicas:
+      - type: s3
+        endpoint: https://1239266bab2ae39d5b84a59a58fa1e38.r2.cloudflarestorage.com
+        bucket: kdsx-sqlite-replicas
+        path: tandir-v2
+        region: auto
+        access-key-id: ${LITESTREAM_ACCESS_KEY_ID}
+        secret-access-key: ${LITESTREAM_SECRET_ACCESS_KEY}
