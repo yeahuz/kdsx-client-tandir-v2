@@ -35,7 +35,8 @@ services:
             - traefik.http.services.tandir-v2-api.loadbalancer.server.port=3000
             - traefik.http.middlewares.wwwredirect.redirectregex.regex=^https://www\.(.*)
             - traefik.http.middlewares.wwwredirect.redirectregex.replacement=https://$${1}
-            - traefik.http.routers.tandir-v2-api.middlewares=wwwredirect
+            - traefik.http.middlewares.compress.compress=true
+            - traefik.http.routers.tandir-v2-api.middlewares=wwwredirect,compress
         environment:
             - ADDR=:3000
             - DOMAIN=https://tandir-v2.api.kdsx.uz
@@ -59,7 +60,8 @@ services:
             - traefik.http.services.tandir-v2-pos.loadbalancer.server.port=80
             - traefik.http.middlewares.wwwredirect.redirectregex.regex=^https://www\.(.*)
             - traefik.http.middlewares.wwwredirect.redirectregex.replacement=https://$${1}
-            - traefik.http.routers.tandir-v2-pos.middlewares=wwwredirect
+            - traefik.http.middlewares.compress.compress=true
+            - traefik.http.routers.tandir-v2-pos.middlewares=wwwredirect,compress
     kitchen:
         build:
             context: ./kdsx-kitchen-v2
@@ -75,7 +77,8 @@ services:
             - traefik.http.services.tandir-v2-kitchen.loadbalancer.server.port=80
             - traefik.http.middlewares.wwwredirect.redirectregex.regex=^https://www\.(.*)
             - traefik.http.middlewares.wwwredirect.redirectregex.replacement=https://$${1}
-            - traefik.http.routers.tandir-v2-kitchen.middlewares=wwwredirect
+            - traefik.http.middlewares.compress.compress=true
+            - traefik.http.routers.tandir-v2-kitchen.middlewares=wwwredirect,compress
     dash:
         build:
             context: ./kdsx-dash-v2
@@ -91,7 +94,8 @@ services:
             - traefik.http.services.tandir-v2-dash.loadbalancer.server.port=80
             - traefik.http.middlewares.wwwredirect.redirectregex.regex=^https://www\.(.*)
             - traefik.http.middlewares.wwwredirect.redirectregex.replacement=https://$${1}
-            - traefik.http.routers.tandir-v2-dash.middlewares=wwwredirect
+            - traefik.http.middlewares.compress.compress=true
+            - traefik.http.routers.tandir-v2-dash.middlewares=wwwredirect,compress
 networks:
     app:
         name: app
